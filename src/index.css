@@ -333,6 +333,7 @@ html{
   background-color: #1a1a1a;
   color: #fff;
   padding-bottom: 100px;
+  padding-top: 35px;
 }
 .main-div{
   display: flex;

@@ -1,5 +1,5 @@
 // Main.jsx
-import { FaGithub, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 // Importing the profile image correctly
 import Profile from './../assets/profile.png';
 
@@ -13,16 +13,13 @@ function Main() {
                     <p id="para">I have expertise in web development using modern technologies and frameworks like React. 
                         Additionally, I specialize in building cross-platform mobile applications with React Native.</p>
                     <div className="social-icons">
-                        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.linkedin.com/in/sodum-dineshreddy" target="_blank" rel="noopener noreferrer">
                             <FaLinkedin size={24} />
                         </a>
-                        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
-                            <FaInstagram size={24} />
-                        </a>
-                        <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+                        <a href="https://github.com/dineshreddy0912" target="_blank" rel="noopener noreferrer">
                             <FaGithub size={24} />
                         </a>
-                        <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
+                        <a href="https://x.com/DineshSodum" target="_blank" rel="noopener noreferrer">
                             <FaTwitter size={24} />
                         </a>
                     </div>

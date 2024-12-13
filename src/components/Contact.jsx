@@ -9,9 +9,9 @@ function Contact(){
                 <div className="in-details">
                 <p id="contact-name">Name: Dinesh reddy</p>
                 <p>Email: sodumdineshreddy@gmail.com</p>
-                <div><a href=""><FaLinkedin size={30} /></a><label><a href="">Linkdin</a></label><br></br></div>
-                <div><a href=""><FaGithub size={30} /></a><label><a href="">Github</a></label><br></br></div>
-                <div><a href=""><FaTwitter size={30} /></a><label><a href="">Twitter</a></label><br></br></div>
+                <div><a href=""><FaLinkedin size={30} /></a><label><a href="https://www.linkedin.com/in/sodum-dineshreddy" target="_blank">Linkdin</a></label><br></br></div>
+                <div><a href=""><FaGithub size={30} /></a><label><a href="https://github.com/dineshreddy0912" target="_blank">Github</a></label><br></br></div>
+                <div><a href=""><FaTwitter size={30} /></a><label><a href="https://x.com/DineshSodum" target="_blank">Twitter</a></label><br></br></div>
                 <p id="contact-address">Address:<br></br>4-27 Mangapalle(v)<br></br>Sanajamala(M)<br></br>kurnool(Dist)<br></br>Andra pradesh </p>
                 </div>
             </div>

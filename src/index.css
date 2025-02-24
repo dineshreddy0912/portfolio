@@ -1,39 +1,137 @@
-*{
+* {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
 }
-html{
-  background-color: #d0d0d0;
+html {
+  background-color: #1a1a1a;
 }
+
 /* Header */
-.header{
+.top,
+.middle,
+.bottom {
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  margin-bottom: 5px;
+  border-radius: 2px;
+}
+
+.x-top,
+.x-bottom {
+  display: none;
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+.x-top {
+  margin-top: 1.5px;
+}
+
+.x-bottom {
+  margin-top: -1.5px;
+}
+
+.small-header {
+  z-index: 3;
+  position: fixed;
+  width: 100%;
+  height: auto;
+  padding: 10px 0 20px 0;
+  background-color: #6A0DAD;
+  transform: translateY(-100%);
+}
+
+.small-header div {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.small-header button {
+  width: 50%;
+  height: 25px;
+  background-color: #c0962e;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.small-header div a {
+  text-decoration: none;
+  color: #fff;
+  font-family: outfit;
+}
+
+.header {
   width: 100%;
   height: 40px;
   position: sticky;
   top: 0;
   left: 0;
   background-color: #6A0DAD;
-  justify-content: center;
+  justify-content: space-around;
   align-content: center;
   z-index: 4;
+  display: flex;
 }
-.header ul{
+.header-right {
+  width: 25%;
+  justify-content: flex-start;
+  margin-left: 150px;
+}
+
+.icon {
+  width: 50px;
+  height: 35px;
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  position: absolute;
+  top: 10;
+  right: 10;
+  display: none;
+}
+
+.header-right h1 {
+  color: #fff;
+}
+
+.header-left {
+  width: 50%;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 45px;
+}
+
+.header ul {
   color: #fff;
   display: flex;
   justify-content: flex-end;
-  margin-right: 30px;
+  margin-right: 10px;
   cursor: pointer;
+  margin-top: 10px;
 }
-.header ul li{
+.header ul li {
   list-style: none;
   margin-left: 30px;
+  transition: .5s;
 }
-.header ul li a{
+.header ul li a {
   text-decoration: none;
   color: #fff;
 }
-#contact-btn{
+.header ul li:hover {
+  scale: 1.1;
+}
+
+#contact-btn {
   width: 80px;
   height: 20px;
   background-color: #FFD700;
@@ -41,15 +139,19 @@ html{
   border-radius: 2px;
   cursor: pointer;
 }
+
 /* main */
 .main {
   display: flex;
-  align-items: center; /* Centers vertically */
-  justify-content: center; /* Aligns items to the start (left) */
+  align-items: center;
+    /* Centers vertically */
+    justify-content: center;
+    /* Aligns items to the start (left) */
   height: auto;
   background-color: #1a1a1a;
   color: #ffffff;
-  padding: 0 20px;/* Adds padding to keep everything inside the screen */
+  padding: 0 20px;
+    /* Adds padding to keep everything inside the screen */
 }
 
 /* Left section styling (text and buttons) */
@@ -59,7 +161,8 @@ html{
   margin-left: 20px;
   margin-right: 0px;
   padding: 20px;
-  padding-left: 70px; /* Adds space between the text and the image */
+  padding-left: 70px;
+    /* Adds space between the text and the image */
 }
 
 /* Name styling */
@@ -68,6 +171,7 @@ html{
   font-family: 'outfit', sans-serif;
   font-size: 2rem;
   font-weight: 700;
+  text-align: center;
 }
 
 /* Greeting styling */
@@ -77,6 +181,17 @@ html{
   font-size: 1.5rem;
   font-weight: 500;
   margin-bottom: 10px;
+  animation: top 1s;
+  }
+  
+  #name {
+    width: 440px;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid #fff;
+    animation: typing 2s steps(26, end),
+      cursor .2s steps(10, end) infinite,
+      top 1s;
 }
 
 /* Paragraph styling */
@@ -87,6 +202,7 @@ html{
   margin-top: 10px;
   width: 450px;
   line-height: 1.7;
+  animation: left 1s;
 }
 
 /* About button styling */
@@ -101,6 +217,7 @@ html{
   font-weight: 600;
   cursor: pointer;
   transition: 0.5s;
+  animation: visible .5s;
 }
 
 #about-btn:hover {
@@ -127,16 +244,25 @@ html{
   transform: scale(1.1);
 }
 
+.social-icons svg {
+  animation: left 1s;
+  animation-delay: .06s;
+}
 /* Right section (image) styling */
 .right {
-  width: 500px; /* Fixed size for the image */
-  height: 500px; /* Fixed size for the image */
-  border-radius: 50%; /* Circular image */
-  overflow: hidden; /* Ensures the image fits in the circle */
+  width: 500px;
+    /* Fixed size for the image */
+    height: 500px;
+    /* Fixed size for the image */
+    border-radius: 50%;
+    /* Circular image */
+    overflow: hidden;
+    /* Ensures the image fits in the circle */
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 100px;
+  animation: right 1s;
 }
 
 .right img {
@@ -144,41 +270,53 @@ html{
   height: 100%;
   object-fit: contain;
   transition: .5s;
-  z-index: 0;/* Ensures the image fits well in the circle */
+  z-index: 0;
+    /* Ensures the image fits well in the circle */
 }
-.right img:hover{
+.right img:hover {
   scale: 1.1;
 }
+
 /* Styling for the About section */
 .about {
   padding-top: 40px;
   display: flex;
-  flex-direction: column; /* Align items vertically */
-  align-items: center; /* Center content horizontally */
-  justify-content: center; /* Center content vertically */
-  height: auto; /* Full height of the viewport */
+  flex-direction: column;
+    /* Align items vertically */
+    align-items: center;
+    /* Center content horizontally */
+    justify-content: center;
+    /* Center content vertically */
+    height: auto;
+    /* Full height of the viewport */
   background-color: #1a1a1a;
   color: #ffffff;
-  text-align: center; /* Center text */
 }
 
-.about h1{
+.about h1 {
   margin-bottom: 20px;
   font-size: 3rem;
   color: #d4af37;
 }
 
 .content {
-  width: 70%; /* Width of the content area */
-  height: auto; /* Height of the content area */
-  background-color: #333333; /* Dark background for content */
+  width: 70%;
+    /* Width of the content area */
+    height: auto;
+    /* Height of the content area */
+    background-color: #333333;
+    /* Dark background for content */
   color: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Center content horizontally within .content */
-  align-items: center; /* Center content vertically within .content */
-  padding: 20px; /* Padding inside the content box */
-  border-radius: 10px; /* Optional: rounded corners for the content */
+  justify-content: center;
+    /* Center content horizontally within .content */
+    align-items: center;
+    /* Center content vertically within .content */
+    padding: 20px;
+    /* Padding inside the content box */
+    border-radius: 10px;
+    /* Optional: rounded corners for the content */
 }
 
 .content p {
@@ -186,9 +324,15 @@ html{
   line-height: 1.6;
   font-family: 'outfit';
 }
-.project { 
+.sign {
+  width: 100%;
+  margin-right: 70px;
+  text-align: end;
+}
+.project {
   display: flex;
-  flex-direction: column; /* Centers content vertically and horizontally */
+  flex-direction: column;
+    /* Centers content vertically and horizontally */
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -207,53 +351,102 @@ html{
 
 .project-area {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Auto-adjusts columns */
-  gap: 20px; /* Adds spacing between grid items */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* Auto-adjusts columns */
+    gap: 20px;
+    /* Adds spacing between grid items */
   width: 80%;
-  max-width: 1200px; /* Prevents it from being too wide */
-  padding: 20px; /* Adds padding inside the grid container */
+  max-width: 1200px;
+    /* Prevents it from being too wide */
+    padding: 20px;
+    /* Adds padding inside the grid container */
   background-color: #333333;
   border-radius: 10px;
 }
 
 .project-area div {
-  width: 100%; /* Makes items responsive */
+  position: relative;
+    width: 100%;
+    /* Makes items responsive */
   height: 300px;
   background-color: #c0962e;
-  border-radius: 10px; /* Optional: rounded corners for a smoother look */
-}
-
+  border-radius: 10px;
+    /* Optional: rounded corners for a smoother look */
+  }
 .project-area div:nth-last-child(1) {
   width: 200px;
   height: 200px;
-  display: flex; /* Makes the div a flex container */
-  justify-content: center; /* Centers content horizontally */
-  align-items: center; /* Centers content vertically */
+  display: flex;
+    /* Makes the div a flex container */
+    justify-content: center;
+    /* Centers content horizontally */
+    align-items: center;
+    /* Centers content vertically */
   height: 200px;
-  border-radius: 50%; /* Ensures the shape remains circular */
-  margin: auto 0; /* Centers the circular item in the grid */
+  border-radius: 50%;
+    /* Ensures the shape remains circular */
+    margin: auto 0;
+    /* Centers the circular item in the grid */
   background-color: #c0962e;
   cursor: pointer;
 }
 
 #icon {
-  color: #fff; /* Sets icon color */
-  font-size: 2rem; /* Adjust the size of the icon */
+  color: #fff;
+    /* Sets icon color */
+    font-size: 2rem;
+    /* Adjust the size of the icon */
 }
-.skill{
+.skill-area {
+  width: 90%;
+  height: auto;
+  background-color: #333333;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  border-radius: 20px;
+  padding-bottom: 20px;
+}
+
+.skill-1,
+.skill-2,
+.skill-3 {
+  width: 400px;
+  height: auto;
+}
+
+.skill-1-chart,
+.skill-2-chart,
+.skill-3-chart {
+  width: 80%;
+  margin: 0 auto;
+  border: 0px solid #fff;
+}
+
+.skill-1-label,
+.skill-2-label,
+.skill-3-label {
+  text-align: center;
+  font-size: 50px;
+  font-weight: 200;
+  color: #d4af37;
+}
+
+.skill {
   width: 100%;
   height: auto;
   background-color: #1a1a1a;
   padding-bottom: 40px;
 }
-.skill h1{
+.skill h1 {
   text-align: center;
   color: #c0962e;
   font-size: 3rem;
-  margin:0 0 20px 0;
+  margin: 0 0 20px 0;
   padding-top: 40px;
 }
-.main-area{
+.main-area {
   width: 80%;
   height: auto;
   background-color: #333333;
@@ -261,8 +454,9 @@ html{
   border-radius: 10px;
   display: grid;
   padding-top: 30px;
-  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
+
 /* CSS for Skills Component */
 @property --a {
   syntax: "<angle>";
@@ -270,7 +464,9 @@ html{
   initial-value: 360deg;
 }
 
-.web-frontend,.web-backend,.crossplatform-app {
+.web-frontend,
+.web-backend,
+.crossplatform-app {
   width: 300px;
   height: 300px;
   margin: 0 auto;
@@ -280,11 +476,16 @@ html{
   background: conic-gradient(#d4af37 var(--a), #c0c0c0 var(--a));
   position: relative;
   transition: --a 1s linear;
-  display: flex; /* Enables flexbox */
-  justify-content: center; /* Centers content horizontally */
-  align-items: center; /* Centers content vertically */
+  display: flex;
+    /* Enables flexbox */
+    justify-content: center;
+    /* Centers content horizontally */
+    align-items: center;
+    /* Centers content vertically */
 }
-.web-frontend::before,.web-backend::before,.crossplatform-app::before {
+.web-frontend::before,
+.web-backend::before,
+.crossplatform-app::before {
   position: absolute;
   content: "";
   width: 260px;
@@ -297,37 +498,42 @@ html{
   transform: translate(-50%, -50%);
   z-index: 1;
 }
+
 .react {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 2; /* Ensures it is above the ::before pseudo-element */
+  z-index: 2;
+    /* Ensures it is above the ::before pseudo-element */
 }
 
 .react svg {
-  z-index: 3; /* Ensures the icon appears on top */
-  color: #002f5f; /* React logo color */
-  font-size: 3rem; 
-  transition: .5s;/* Adjust size for visibility */
+  z-index: 3;
+    /* Ensures the icon appears on top */
+    color: #002f5f;
+    /* React logo color */
+    font-size: 3rem;
+  transition: .5s;
+    /* Adjust size for visibility */
 }
-.web-frontend:hover .react svg{
+.web-frontend:hover .react svg {
   color: #001f3d;
   scale: 1.3;
 }
-.web-backend:hover .react svg{
+.web-backend:hover .react svg {
   color: #001f3d;
   scale: 1.3;
 }
-.crossplatform-app:hover .react svg{
+.crossplatform-app:hover .react svg {
   color: #001f3d;
   scale: 1.3;
 }
-.web-frontend:hover #react{
+.web-frontend:hover #react {
   scale: 1.3;
 }
-.contact{
+.contact {
   width: 100%;
   height: auto;
   background-color: #1a1a1a;
@@ -335,64 +541,67 @@ html{
   padding-bottom: 100px;
   padding-top: 35px;
 }
-.main-div{
+.main-div {
   display: flex;
   justify-content: space-around;
 }
-.contact h1{
+.contact h1 {
   text-align: center;
   color: #c0962e;
   font-size: 3rem;
   margin: 0 0 30px 0;
-  
+
 }
-.details,.details-user{
-  width:45%;
+.details,
+.details-user {
+  width: 45%;
   height: auto;
   border: 0px solid #fff;
 }
-.details{
+.details {
   font-size: 1.2rem;
   padding: 10px;
   margin-bottom: 20px;
   text-decoration: none;
   padding-left: 0px;
 }
-.in-details{
+.in-details {
   padding: 20px 0 0 50px;
 }
-.details p,.details svg{
+.details p,
+.details svg {
   margin: 0 10px 10px 0;
 }
-.details svg{
+.details svg {
   position: relative;
   color: #fff;
   transition: .2s;
 }
-.details svg:hover{
+.details svg:hover {
   scale: 1.1;
   color: #c0962e;
 }
-.details label:hover .details svg{
+.details label:hover .details svg {
   scale: 1.1;
   color: #c0962e;
 }
-.details label{
+.details label {
   position: absolute;
   transition: .2s;
   align-items: center;
 }
-.details label:hover{
+.details label:hover {
   scale: 1.1;
 }
-.details label a{
+.details label a {
   text-decoration: none;
   color: #fff;
 }
-.details-user{
+.details-user {
   align-items: center;
 }
-#user-name, #mail {
+#user-name,
+#mail {
   color: #1a1a1a;
   margin: 10px;
   width: 90%;
@@ -405,17 +614,20 @@ html{
   text-align: left;
 }
 
-#user-name::placeholder, #mail::placeholder {
+#user-name::placeholder,
+#mail::placeholder {
   font-size: 1rem;
-  text-align: left; /* Keeps placeholder aligned with padding */
+  text-align: left;
+    /* Keeps placeholder aligned with padding */
 }
-#message{
+#message {
   max-width: 89%;
   resize: none;
   margin: 10px;
   padding-left: 5px;
   text-align: left;
 }
+
 .details-user button {
   width: 80%;
   height: 40px;
@@ -429,126 +641,385 @@ html{
   cursor: pointer;
   border-radius: 5px;
 }
-@media (max-width:1127px){
+/* animation */
+@keyframes small-header-display {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
 }
-@media (max-width: 900px){
-  .about{
+
+@keyframes small-header-close {
+  from {
+    transform: translateY(0%);
+  }
+
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes three {
+  from {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+}
+
+@keyframes threeRev {
+  from {
+    opacity: 0;
+    overflow-x: hidden;
+    transform: translateX(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes cross_top {
+  from {
+    opacity: 0;
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: rotateZ(-40deg);
+  }
+}
+
+@keyframes cross_bottom {
+  from {
+    opacity: 0;
+    transform: rotateZ(0deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: rotateZ(40deg);
+  }
+}
+
+@keyframes visible {
+  from {
+    opacity: 0;
+    scale: 0;
+  }
+
+  top {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+
+@keyframes cursor {
+  50% {
+    border-color: transparent
+  }
+
+  100% {
+    border-color: none;
+  }
+}
+
+@keyframes top {
+  0% {
+    transform: translateX(-100%);
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0%);
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes left {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes right {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes bottom {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@media (max-width:1127px) {}
+
+@media (max-width: 900px) {
+  .about {
     padding-top: 40px;
   }
-  .main{
+.main {
     flex-direction: column-reverse;
   }
-  .right{
+.right {
     margin: 20px;
   }
-  .left{
+.left {
     width: 90%;
-    margin: 0 auto 20px;
+    margin: 70px auto 20px;
     text-align: center;
     padding: 0;
   }
-  #para{
+#name {
+  border: none;
+  width: unset;
+  animation: bottom 1s;
+}
+
+.right {
+  animation: top .8s;
+}
+
+#para {
     width: 90%;
     margin: 0 auto;
+    animation: bottom 1s;
   }
-  .social-icons{
+.social-icons {
     display: flex;
     justify-content: center;
     margin: 25px;
+
   }
-  .main-div{
+.social-icons svg {
+  animation: bottom 1s;
+  animation-delay: .06s;
+}
+
+.main-div {
     height: auto;
     display: flex;
     flex-direction: column;
   }
-  .details,.details-user{
+.details,
+.details-user {
     margin: 10px auto;
   }
-  .details{
+.details {
     width: 70%;
   }
-  .details-user{
+.details-user {
     width: 90%;
   }
 }
-@media (max-width: 748px){
-  .about{
+@media (max-width: 748px) {
+  .about {
     padding-top: 40px;
   }
-  .left{
+.left {
     width: 80%;
     margin: 0 auto;
     padding: 0;
   }
 }
+@media (max-width:700px) {
+  .header {
+    justify-content: space-between;
+  }
+
+  .header-right h1 {
+    margin-left: 30px;
+  }
+
+  .main-icon {
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+    margin: 2px 0 0 0;
+    float: right;
+  }
+
+  .icon {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 40px;
+    margin-right: 20px;
+    background-color: transparent;
+  }
+
+  .top {
+    margin-top: 5px;
+  }
+
+
+  .header-left {
+    display: none;
+  }
+
+  .header-right {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 575px) {
+  #name {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width:528px) {
+  .right {
+    margin: 0 auto;
+    width: 450px;
+    height: 450px;
+  }
+
+  .right img {
+    margin: 0 auto;
+  }
+}
 @media (max-width: 504px) {
-  .about{
+  .about {
     padding-top: 40px;
   }
-  .right{
+.right {
     width: 400px;
     height: 400px;
   }
 }
-@media (max-width: 463px){
-  .details{
+@media (max-width: 463px) {
+  .details {
     font-size: 1.1rem;
     padding: 10px;
   }
 }
-@media (max-width: 406px){
-  .about{
-    padding-top: 40px;
-  }
-  .right{
+@media (max-width: 420px) {
+  .right {
     width: 350px;
     height: 350px;
   }
-  .left{
+}
+
+@media (max-width:440px) {
+  #name {
+    font-size: 1.2rem;
+  }
+
+  #para {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 406px) {
+  .about {
+    padding-top: 40px;
+  }
+.right {
+    width: 350px;
+    height: 350px;
+  }
+.left {
     margin: 0 auto;
     padding: 0;
   }
-}@media (max-width: 463px){
-  .details{
+}
+
+@media (max-width:370px) {
+  .right {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media (max-width:360px) {
+  #name {
+    font-size: 1rem;
+  }
+
+  #para {
+    font-size: 0.5rem;
+  }
+}
+
+@media (max-width: 463px) {
+  .details {
     font-size: 1.1rem;
     padding: 5px;
   }
 }
-@media (max-width: 383px){
-  .details{
+@media (max-width: 383px) {
+  .details {
     font-size: 0.9rem;
     padding: 5px;
   }
 }
+
 /* media quires for projects items */
-@media (max-width: 1075px){
-  .project-area div:nth-last-child(2){
+@media (max-width: 1075px) {
+  .project-area div:nth-last-child(2) {
     display: none;
   }
 }
-@media (max-width: 800px){
+@media (max-width: 800px) {
   .project-area div:nth-last-child(2),
   .project-area div:nth-last-child(3),
   .project-area div:nth-last-child(4),
-  .project-area div:nth-last-child(5){
+  .project-area div:nth-last-child(5) {
     display: none;
   }
 }
-@media (max-width: 800px){
+@media (max-width: 800px) {
   .project-area div:nth-last-child(2),
   .project-area div:nth-last-child(3),
   .project-area div:nth-last-child(4),
-  .project-area div:nth-last-child(5){
+  .project-area div:nth-last-child(5) {
     display: none;
   }
 }
-@media (max-width: 525px){
+@media (max-width: 525px) {
   .project-area div:nth-last-child(2),
   .project-area div:nth-last-child(3),
   .project-area div:nth-last-child(4),
   .project-area div:nth-last-child(5),
   .project-area div:nth-last-child(6),
-  .project-area div:nth-last-child(7){
+  .project-area div:nth-last-child(7) {
     display: none;
   }
 }

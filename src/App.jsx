@@ -4,7 +4,7 @@ import Contact from './components/Contact'
 import Header from './components/Header'
 import Main from './components/Main'
 import Project from './components/Project'
-import Skill from './components/Skills'
+import Skills from './components/Skills'
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
       <Main/>
       <About/>
       <Project/>
-      <Skill/>
+      <Skills/>
       <Contact/>
     </>
   )

@@ -3,14 +3,21 @@ import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 // Importing the profile image correctly
 import Profile from './../assets/profile.png';
 
+
 function Main() {
+    const handleScroll = () => {
+        const contentSection = document.getElementById("about");
+        if (contentSection) {
+          contentSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      };
     return (
         <>
             <div className="main" id="main">
                 <div className="left">
                     <h1 id="greeting">Hi there,</h1>
                     <h2 id="name">I am Dinesh, Web Developer</h2>
-                    <p id="para">I have expertise in web development using modern technologies and frameworks like React. 
+                    <p id="para">I have some knowledge in web development using modern technologies and frameworks like React. 
                         Additionally, I specialize in building cross-platform mobile applications with React Native.</p>
                     <div className="social-icons">
                         <a href="https://www.linkedin.com/in/sodum-dineshreddy" target="_blank" rel="noopener noreferrer">
@@ -24,7 +31,7 @@ function Main() {
                         </a>
                     </div>
                     <div className="about-btn-div">
-                        <button id="about-btn">About me</button>
+                        <button id="about-btn" onClick={handleScroll}>About me</button>
                     </div>
                 </div>
                 <div className="right">
